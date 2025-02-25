@@ -10,21 +10,27 @@ const app = createApp({
                 {
                     name: 'Gaïa',
                     image: '/images/coach1.jpg',
-                    description: 'Coach passionné spécialisé en musculation et course à pied. Mon approche combine force et endurance pour des résultats optimaux.',
+                    description: `**Titulaire d'une licence en biologie santé et d'un master en bioinformatique**, j'ai acquis une solide compréhension du corps humain et de la nutrition.
+
+Ma **passion pour le sport** m'a poussé à y consacrer toute mon énergie, adoptant une **approche holistique** qui considère le corps et l'esprit comme un tout.
+
+Il y a 5 ans, j'ai débuté la **musculation**, explorant diverses disciplines comme le bodybuilding, le powerlifting et le streetlifting. Cette exploration m'a permis de développer une **méthode globale**, intégrant sport, nutrition et bien-être mental.
+
+Aujourd'hui, je possède les clés pour atteindre un **physique esthétique** et un **esprit équilibré**, presque sans effort.
+
+Récemment, je me suis lancé dans la **course à pied**, participant à quatre courses dont un **semi-marathon** dès mes premiers mois d'entraînement. Je me prépare actuellement pour le **marathon de Paris**, poursuivant mon objectif d'apprentissage continu et d'application concrète sur le terrain, tout en maintenant l'harmonie entre corps et esprit.`,
                     specialties: [
                         'Musculation',
-                        'Course à pied',
                         'Nutrition sportive'
                     ]
                 },
                 {
                     name: 'Seamoon',
                     image: '/images/coach2.jpg',
-                    description: 'Expert en préparation physique, je vous accompagne dans l\'atteinte de vos objectifs avec des programmes sur mesure.',
+                    description: `à remplir`,
                     specialties: [
-                        'Préparation physique',
-                        'Programmes hybrides',
-                        'Planification nutritionnelle'
+                        'Musculation',
+                        'Course à pied'
                     ]
                 }
             ],
@@ -42,7 +48,7 @@ const app = createApp({
                         'Objectifs personnalisés',
                         'Programme unique et adapté'
                     ],
-                    price: '59€',
+                    price: 'à partir de 59€',
                     type: 'unique'
                 },
                 {
@@ -52,9 +58,10 @@ const app = createApp({
                     features: [
                         'Programme musculation, course à pied ou hybride',
                         'Plan nutritionnel personnalisé',
-                        'Suivi et ajustements réguliers',
-                        'Support continu',
-                        'Accompagnement mensuel'
+                        'Support continu par WhatsApp (24/7)',
+                        'Point mensuel en visio ou téléphone',
+                        'Ajustements et adaptations en temps réel',
+                        'Programme évolutif selon vos progrès'
                     ],
                     price: '89€/mois',
                     type: 'mensuel'
@@ -114,6 +121,9 @@ const app = createApp({
                 loopCount: Infinity,    // Boucle infinie
                 // Suppression des callbacks qui causaient des bugs
             })
+        },
+        renderMarkdown(text) {
+            return marked.parse(text)
         }
     },
     mounted() {

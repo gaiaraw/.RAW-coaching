@@ -272,6 +272,40 @@ nav {
     margin-bottom: 1rem;
 }
 
+.coach-info p {
+    margin-bottom: 1rem;
+}
+
+.coach-info strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Style amélioré pour les spécialités */
+.coach-specialties {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.coach-specialties span {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.coach-specialties span:hover {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+}
+
 /* Services Section */
 .services-section {
     padding: 8rem 0;
