@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DualCoach - Coaching Sportif Personnalisé</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <div id="app">
+        <nav :class="{ 'nav-scrolled': isScrolled }">
+            <div class="container nav-container">
+                <h2 class="logo">.RAW</h2>
+                <div class="nav-links" :class="{ 'active': isMenuOpen }">
+                    <a href="#accueil">Accueil</a>
+                    <a href="#about">À Propos</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact" class="btn-contact">Me Contacter</a>
+                </div>
+                <button class="menu-toggle" @click="toggleMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <section id="accueil" class="hero">
+            <div class="hero-content">
+                <h1>
+                    <span class="static-text">Votre programme</span>
+                    <span class="typing-text"></span>
+                </h1>
+                <p>{{ heroSubtitle }}</p>
+                <div class="hero-buttons">
+                    <a :href="formLink" target="_blank" class="btn btn-primary">Commencer maintenant</a>
+                    <a href="#services" class="btn btn-outline">Découvrir les programmes</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">Vos Coachs</h2>
+                <div class="coaches-grid">
+                    <div class="coach-card" v-for="coach in coaches" :key="coach.name">
+                        <img :src="coach.image" :alt="coach.name" class="coach-image">
+                        <div class="coach-info">
+                            <h3>{{ coach.name }}</h3>
+                            <p>{{ coach.description }}</p>
+                            <div class="coach-specialties">
+                                <span v-for="specialty in coach.specialties" :key="specialty">
+                                    {{ specialty }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Nos Services</h2>
+                <div class="services-grid">
+                    <div class="service-card" v-for="service in services" :key="service.title">
+                        <div class="service-icon">
+                            <i :class="service.icon"></i>
+                        </div>
+                        <h3>{{ service.title }}</h3>
+                        <div class="service-price">
+                            <span class="amount">{{ service.price }}</span>
+                            <span v-if="service.type === 'mensuel'" class="period">par mois</span>
+                            <span v-else class="type">paiement unique</span>
+                        </div>
+                        <p>{{ service.description }}</p>
+                        <ul class="service-features">
+                            <li v-for="feature in service.features" :key="feature">
+                                <i class="fas fa-check"></i> {{ feature }}
+                            </li>
+                        </ul>
+                        <a :href="formLink" target="_blank" class="btn btn-primary">Je commence</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Prêt à commencer ?</h2>
+                <p class="section-subtitle">Remplissez notre formulaire pour une consultation gratuite</p>
+                <a :href="formLink" target="_blank" class="contact-btn">
+                    Formulaire de contact
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container footer-content">
+                <div class="footer-brand">
+                    <h3>.RAW coaching</h3>
+                    <p>Pure. Authentique. Efficace.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#about">À Propos</a>
+                    <a href="#services">Services</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-icons">
+                        <a v-for="social in socials" 
+                           :key="social.name"
+                           :href="social.url" 
+                           :title="social.name"
+                           target="_blank">
+                            <i :class="social.icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ currentYear }} DualCoach. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
