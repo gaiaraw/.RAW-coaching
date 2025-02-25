@@ -74,7 +74,7 @@ const app = createApp({
             ],
             typingTexts: [
                 'MUSCULATION',
-                'COURSE À PIED',
+                'RUNNING',
                 'HYBRIDE'
             ]
         }
