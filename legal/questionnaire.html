@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire - .RAW Coaching</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIGZpbGw9IiMxMjEyMTIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IlBvcHBpbnMsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMGZmODgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5SPC90ZXh0Pjwvc3ZnPg==">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <div id="questionnaire-form" class="questionnaire-container">
+        <h1>Programme Premium</h1>
+        <p class="questionnaire-intro">Pour créer ton programme personnalisé, j'ai besoin d'en savoir plus sur toi et tes objectifs.</p>
+        
+        <form id="program-form" class="form-steps" action="https://formsubmit.co/gaiaraw.pro@gmail.com" method="POST">
+            <!-- Redirection après soumission -->
+            <input type="hidden" name="_next" value="https://buy.stripe.com/votre_lien_de_paiement">
+            <input type="hidden" name="_subject" value="Nouveau questionnaire Programme Premium">
+            
+            <div class="step active">
+                <h2>Informations personnelles</h2>
+                <div class="form-group">
+                    <label for="name">Ton prénom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Ton âge</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Ton email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Quel est ton objectif principal ?</label>
+                    <select name="main-goal" required>
+                        <option value="">Choisis ton objectif</option>
+                        <option value="muscle">Prise de masse musculaire</option>
+                        <option value="fat-loss">Perte de graisse</option>
+                        <option value="performance">Performance</option>
+                        <option value="health">Santé générale</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Ton niveau d'expérience</label>
+                    <select name="experience" required>
+                        <option value="">Choisis ton niveau</option>
+                        <option value="beginner">Débutant</option>
+                        <option value="intermediate">Intermédiaire</option>
+                        <option value="advanced">Avancé</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Où t'entraînes-tu ?</label>
+                    <select name="training-location" required>
+                        <option value="">Choisis ton lieu d'entraînement</option>
+                        <option value="gym">Salle de sport</option>
+                        <option value="home">À la maison</option>
+                        <option value="both">Les deux</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Combien de séances par semaine peux-tu faire ?</label>
+                    <select name="sessions-per-week" required>
+                        <option value="">Choisis le nombre de séances</option>
+                        <option value="2">2 séances</option>
+                        <option value="3">3 séances</option>
+                        <option value="4">4 séances</option>
+                        <option value="5">5 séances ou plus</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer et procéder au paiement</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html> 

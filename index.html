@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.RAW coaching</title>
+    <title>.RAW Coaching</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIGZpbGw9IiMxMjEyMTIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IlBvcHBpbnMsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMGZmODgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIj5SPC90ZXh0Pjwvc3ZnPg==">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -15,12 +16,11 @@
     <div id="app">
         <nav :class="{ 'nav-scrolled': isScrolled }">
             <div class="container nav-container">
-                <h2 class="logo">.RAW coaching</h2>
+                <h2 class="logo">.RAW Coaching</h2>
                 <div class="nav-links" :class="{ 'active': isMenuOpen }">
                     <a href="#accueil">Accueil</a>
                     <a href="#about">À Propos</a>
                     <a href="#services">Services</a>
-                    <a href="#contact" class="btn-contact">Nous Contacter</a>
                 </div>
                 <button class="menu-toggle" @click="toggleMenu">
                     <i class="fas fa-bars"></i>
@@ -31,20 +31,19 @@
         <section id="accueil" class="hero">
             <div class="hero-content">
                 <h1>
-                    <span class="static-text">Votre programme</span>
+                    <span class="static-text">Ton programme</span>
                     <span class="typing-text"></span>
                 </h1>
-                <p>{{ heroSubtitle }}</p>
                 <div class="hero-buttons">
-                    <a :href="formLink" target="_blank" class="btn btn-primary">Commencer maintenant</a>
-                    <a href="#services" class="btn btn-outline">Découvrir les programmes</a>
+                    <a href="#services" class="btn btn-primary">Découvre les programmes</a>
+                    <a href="#about" class="btn btn-outline">Tes coachs</a>
                 </div>
             </div>
         </section>
 
         <section id="about" class="about-section">
             <div class="container">
-                <h2 class="section-title">Vos Coachs</h2>
+                <h2 class="section-title">Tes Coachs</h2>
                 <div class="coaches-grid">
                     <div class="coach-card" v-for="coach in coaches" :key="coach.name">
                         <img :src="coach.image" :alt="coach.name" class="coach-image">
@@ -58,6 +57,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                
+                <div class="coaching-mission">
+                    <h3 class="mission-title">Notre Vision du Coaching</h3>
+                    <div class="mission-content" v-html="renderMarkdown(coachingMission)"></div>
                 </div>
             </div>
         </section>
@@ -82,28 +86,39 @@
                                 <i class="fas fa-check"></i> {{ feature }}
                             </li>
                         </ul>
-                        <a :href="formLink" target="_blank" class="btn btn-primary">Je commence</a>
+                        <a :href="service.formLink" target="_blank" class="btn btn-primary">Je commence</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
+        <section class="advantages-section">
             <div class="container">
-                <h2 class="section-title">Prêt à commencer ?</h2>
-                <p class="section-subtitle">Remplissez notre formulaire pour une consultation gratuite</p>
-                <a :href="formLink" target="_blank" class="contact-btn">
-                    Formulaire de contact
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <i class="fas fa-dumbbell"></i>
+                        <h3>Adapté à ton matériel</h3>
+                        <p>Programme sur mesure selon ton équipement : salle, maison ou extérieur</p>
+                    </div>
+                    <div class="advantage-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Objectifs personnalisés</h3>
+                        <p>Que ce soit pour un physique sculpté ou une course à venir, nous saurons répondre à tes besoins</p>
+                    </div>
+                    <div class="advantage-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Disponibles pour toi</h3>
+                        <p>Support réactif et suivi régulier pour t'accompagner dans ta progression</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <footer>
             <div class="container footer-content">
                 <div class="footer-brand">
-                    <h3>.RAW coaching</h3>
-                    <p>Pure. Authentique. Efficace.</p>
+                    <h3>.RAW Coaching</h3>
+                    <p>Pure. Authentique. Pour toi.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Navigation</h4>

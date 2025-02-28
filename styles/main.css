@@ -974,4 +974,168 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.coaching-mission {
+    margin-top: 6rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mission-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mission-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.mission-content strong {
+    color: var(--primary-color);
+}
+
+.advantages-section {
+    padding: 6rem 0;
+    background: var(--darker-bg);
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.advantage-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: var(--neon-shadow);
+}
+
+.advantage-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.advantage-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+.advantage-card p {
+    color: var(--gray-text);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .advantages-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Styles pour le questionnaire */
+.questionnaire-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    color: var(--light-text);
+}
+
+.questionnaire-intro {
+    margin-bottom: 2rem;
+    color: var(--gray-text);
+    font-size: 1.1rem;
+}
+
+.form-steps {
+    position: relative;
+}
+
+.step {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.step.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--light-text);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--dark-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: var(--light-text);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.2);
+}
+
+/* Stripe Elements */
+#card-element {
+    padding: 1rem;
+    background: var(--dark-bg);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#card-errors {
+    color: #ff4444;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.payment-info {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* Navigation entre les étapes */
+.step .btn {
+    margin: 0.5rem;
 } 
