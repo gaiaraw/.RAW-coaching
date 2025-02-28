@@ -13,10 +13,11 @@
         <h1>Programme Premium</h1>
         <p class="questionnaire-intro">Pour créer ton programme personnalisé, j'ai besoin d'en savoir plus sur toi et tes objectifs.</p>
         
-        <form id="program-form" class="form-steps" action="https://formsubmit.co/gaiaraw.pro@gmail.com" method="POST">
+        <form id="program-form" class="form-steps" action="https://api.web3forms.com/submit" method="POST">
             <!-- Redirection après soumission -->
-            <input type="hidden" name="_next" value="https://buy.stripe.com/fZebKL7YpfF53Uk6op">
-            <input type="hidden" name="_subject" value="Nouveau questionnaire Programme Premium">
+            <input type="hidden" name="access_key" value="a4dd8174-1b35-4313-948c-58d0454ef4e4">
+            <input type="hidden" name="subject" value="Nouveau questionnaire Programme Premium">
+            <input type="hidden" name="redirect" value="./payment.html">
             
             <div class="step active">
                 <h2>Informations personnelles</h2>
